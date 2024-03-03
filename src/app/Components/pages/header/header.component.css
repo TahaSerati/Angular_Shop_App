@@ -1,0 +1,8 @@
+.animation_come {
+     transition: all 0.3s ease-in-out;
+}
+
+a { 
+     text-decoration : none;
+     color : #000; 
+}

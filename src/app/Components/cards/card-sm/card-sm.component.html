@@ -1,0 +1,60 @@
+<div class="bg-white w-full h-36 py-2 px-2 cursor-pointer flex items-center justify-between hover:shadow-lg"
+     style="border-top : 1px solid rgb(165, 165, 165) ; border-right : 1px solid rgb(165, 165, 165) ; border-left : 1px solid rgb(165, 165, 165) ;"
+     (click)="onCardClicked()">
+     <div class="w-full h-full px-2 flex flex-col items-center gap-1">
+          <!-- <div class="w-full h-7 text-right overflow-hidden text-xl">{{product.productDescription}}</div>
+          <div class="w-full h-7 text-right text-xs text-rose-600 overflow-hidden text-md"> <p *ngIf="!product.isAvailable">ناموجود</p> </div>
+          <div class="w-full h-8 flex items-center jusify-between">
+               <div class="w-3/4 h-full flex flex-col items-center">
+                    <div style="font-size : 9px" class="w-full h-1/2 text-xs flex items-center gap-2 overflow-hidden">
+                         <div>تومان</div>
+                         <div class="text-lg">{{product.productPrice}}</div>
+                    </div>
+                    <div style="font-size : 9px"
+                         class="w-full h-1/2 text-neutral-500 text-center line-through overflow-hidden"
+                         *ngIf="product.hasDiscount">
+                         {{product.discountAmount}}
+                    </div>
+               </div>
+               <div class="w-1/4 h-full flex items-center justify-end">
+                    <div class="bg-rose-700 w-10 rounded-full text-center text-white  text-sm"
+                         *ngIf="product.hasDiscount">
+                         {{product.discountPrecent}}%
+                    </div>
+               </div>
+          </div> -->
+          <div id="title" class="w-full h-12  text-right overflow-hidden">
+               <p class="m-0">{{product.productDescription}}</p>
+          </div>
+          <div id="title" class="w-full h-6 flex items-center justify-end overflow-hidden">
+               <div *ngIf="product.hasDiscount">
+                    <p class="m-0 text-rose-600">موجود نمیباشد</p>
+               </div>
+          </div>
+          <div id="title" class="w-full h-12 flex items-center justify-center overflow-hidden rounded-sm">
+               <div class="w-3/4 h-full flex flex-col items-center">
+                    <div class="w-full h-full flex items-center gap-1 px-2">
+                         <p class="text-xs m-0">تومان</p>
+                         <p class="m-0">{{product.productPrice}}</p>
+                    </div>
+                    <div class="w-full h-full text-left line-through text-sm px-2 text-gray-500">
+                         <span *ngIf="product.hasDiscount"> {{product.discountAmount}} </span>
+                    </div>
+               </div>
+               <div class="w-1/4 h-full flex items-center justify-center">
+                    <div *ngIf="product.hasDiscount"
+                         class="bg-rose-400 rounded-full text-center w-8 h-4 text-xs text-white">
+                         <span> %
+                              {{product.discountPrecent}}
+                         </span>
+                    </div>
+                    <div *ngIf="!product.hasDiscount" class="rounded-full text-center w-8 h-4 text-xs text-white">
+                    </div>
+               </div>
+          </div>
+
+     </div>
+     <div id="img" class="w-44 h-full flex items-center justify-center">
+          <img class="object-cover w-full h-full" [src]="product.productImagesAddress[0]">
+     </div>
+</div>

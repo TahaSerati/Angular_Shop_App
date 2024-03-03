@@ -1,0 +1,17 @@
+<div class="container w-full h-40 overflow-scroll" id="scroll">
+     <div class="h-full flex items-center justify-end gap-2 px-6" style="min-width: fit-content; ">
+          <div *ngFor="let product of sliderProducts$ | async " class="w-22 h-36 flex flex-col
+               items-center justify-evenly cursor-pointer" (click)="onSeeAllProducts(product)" style="width : 85px">
+               <div class="h-22 w-full">
+                    <div class="h-full w-full overflow-hidden rounded-full p-1" style="border : 2px solid rgb(77, 216, 174)">
+                         <img class="h-full w-full rounded-full object-cover" [src]="product.ImgAddress" />
+                    </div>
+               </div>
+               <div class="flex w-full items-center justify-center h-18">
+                    <div class="overflow-hidden whitespace-normal text-center text-xs">
+                         {{product.sliderName}}
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,11 @@
+.container_grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit , 310px);
+     justify-content: center;
+     row-gap: 5px;
+}
+
+/* .container_grid_item {
+     text-align: center;
+     justify-self: center;
+} */

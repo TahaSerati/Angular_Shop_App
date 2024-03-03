@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="container my-4">
+
+     <div class="flex w-full items-center justify-end  ">
+          <div class="transition-all duration-400 cursor-pointer hover:text-blue-600 flex items-center space-x-2"
+          (click)="goBack()">
+               <div>
+                    <span> بازگشت </span>
+               </div>
+               <div>
+                    <i class="fa-solid fa-arrow-right-to-bracket text-sm"></i>
+               </div>
+          </div>
+     </div>
+
+
+     <div class="flex w-full items-center justify-end mt-4 mb-6">
+          <div class="text-xl ">
+               <span> سفارش ها </span>
+          </div>
+     </div>
+
+
+
+     <div class="flex items-center justify-between overflow-scroll w-full pb-2"
+          style="border-bottom:1px solid rgb(228, 228, 228) ;" id="scroll">
+          <div class="rounded-full text-sm flex items-center justify-center cursor-pointer px-2 py-1 "
+               style="white-space: nowrap;" (click)="canceledOrdersLine(0)">
+               <span> لغو شده </span>
+          </div>
+          <div class="rounded-full text-sm flex items-center justify-center cursor-pointer px-2 py-1 "
+               style="white-space: nowrap;" (click)="expectationLine(1)">
+               <span> در صف بررسی </span>
+          </div>
+          <div class="rounded-full text-sm flex items-center justify-center cursor-pointer px-2 py-1 "
+               style="white-space: nowrap;" (click)="inLine(2)">
+               <span> جاری </span>
+          </div>
+          <div class="rounded-full text-sm flex items-center justify-center cursor-pointer px-2 py-1 "
+               style="white-space: nowrap;" (click)="paymentLine(3)">
+               <span> در انتظار پرداخت </span>
+          </div>
+          <div class="active text-sm rounded-full flex items-center justify-center cursor-pointer px-2 py-1 "
+               style="white-space: nowrap;" (click)="all(4)">
+               <span> همه </span>
+          </div>
+     </div>
+
+
+
+     <div class="flex flex-col w-full bg-gray-100 items-center space-y-2 px-3 py-4 rounded my-3">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+     </div>
+
+</div>
+
+<app-footer></app-footer>

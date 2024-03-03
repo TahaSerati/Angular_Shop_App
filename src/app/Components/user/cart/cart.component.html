@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div class="container flex flex-col ">
+     <div id="1" class="flex justify-end bg-gray-200 pt-4 px-2 pb-2">
+          <div class="flex space-x-2 items-center">
+               <div
+                    class="flex rounded-full items-center justify-center bg-blue-500 "
+                    style="width: 20px; height: 20px;">
+                    <span class="text-white text-xs">1</span>
+               </div>
+               <div class="text-xl">
+                    <span>سبد خرید</span>
+               </div>
+          </div>
+     </div>
+
+     <div class="w-full flex items-center" *ngFor="let product of productsList | async">
+          <div class=""></div>
+
+     </div>
+
+     <!-- <div class="w-full flex items-center justify-center ">
+          <ng-container *ngFor="let product of productsList | async">
+               <app-card-sm [product]="product"></app-card-sm>
+               <div (click)="deleteProduct(product)">
+                    حذف
+               </div>
+          </ng-container>
+     </div> -->
+
+</div>

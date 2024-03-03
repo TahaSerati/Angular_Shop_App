@@ -1,0 +1,381 @@
+
+<div class="w-full">
+     <div
+          class="bg-white px-2 fixed top-0 z-50 flex h-16 w-full items-center justify-around lg:hidden shadow-sm"
+          style="padding: 12px 0; border-bottom: 1px solid rgb(199, 199, 199);">
+          <svg class="text-black w-6 h-6 text-2xl absolute top-5 right-4 z-50 "
+               xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+          <input type="text"
+               class=" bg-LightGray w-full h-full relative pr-9 py-1 rounded-sm focus:outline-none"
+               placeholder="جستجو کنید" style="direction : rtl;"
+               [(ngModel)]="userSerchedString"
+               (keyup.enter)="onUserSearch()" />
+     </div>
+</div>
+<div class="w-full h-22 lg:hidden"></div>
+
+<div
+     class="bg-white w-full h-14 z-50 fixed bottom-0 flex items-center justify-around lg:hidden">
+
+     <!-- home -->
+     <div id="house"
+          class=" w-12 h-12 flex flex-col items-center justify-center gap-1 cursor-pointer"
+          (click)="toggleIcon('home')" (click)="activeIcon['home'] "
+          [routerLink]="['/']">
+          <svg class="w-6 h-6 text-gray-400"
+               [ngClass]="{'text-dark' : activeIcon['home']}"
+               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor">
+               <path
+                    d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+               <path
+                    d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+          </svg>
+     </div>
+     
+     <!-- cart -->
+     <div id="cart"
+          class=" w-12 h-12 flex flex-col items-center justify-center gap-1 cursor-pointer"
+          (click)="toggleIcon('cart')" [routerLink]="['/cart']">
+          <svg class="w-6 h-6 text-gray-400"
+               [ngClass]="{'text-dark' : activeIcon['cart']}"
+               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor">
+               <path
+                    d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25Zm1.5 18a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Zm12.75 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+          </svg>
+     </div>
+
+     <!-- list1 -->
+     <div id="list"
+          class=" w-12 h-12 flex flex-col items-center justify-center gap-1 cursor-pointer"
+          (click)="toggleIcon('list')" (click)="activeIcon['list'] "
+          [routerLink]="['/categories']">
+          <svg class="w-6 h-6 text-gray-400"
+               [ngClass]="{'text-dark' : activeIcon['list']}"
+               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="currentColor">
+               <path
+                    d="M5.625 3.75a2.625 2.625 0 1 0 0 5.25h12.75a2.625 2.625 0 0 0 0-5.25H5.625Zm-1.875 7.5a.75.75 0 0 0 0 1.5h16.5a.75.75 0 0 0 0-1.5H3.75ZM3 15.75a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Zm.75 3a.75.75 0 0 0 0 1.5h16.5a.75.75 0 0 0 0-1.5H3.75Z" />
+          </svg>
+     </div>
+
+     <!-- dashboard -->
+     <div id="user"
+          class=" w-12 h-12 flex flex-col items-center justify-center gap-1 cursor-pointer rounded-sm"
+          #Icons
+          (click)="toggleIcon('user')" [routerLink]="['/dashboard']"
+          [ngClass]="{'text-dark' : activeIcon['user']}">
+          <svg class="w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 24 24" fill="currentColor">
+               <path fill-rule="evenodd"
+                    d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                    clip-rule="evenodd" />
+          </svg>
+     </div>
+</div>
+
+<div class="container mx-auto flex flex-col items-center justify-center y-3 hidden lg:block">
+     <div class="w-full h-full flex justify-between items-center w-full mb-8 sticky top-0">
+          <div id="1" class="flex items-center space-x-6">
+               <i [routerLink]="['/cart']"
+                    class="text-lg cursor-pointer fa-solid fa-cart-shopping"></i>
+               <div *ngIf="isLogined">
+                    <div class="cursor-pointer">
+                         <i class="text-lg mt-1 fa-regular fa-user"
+                              (click)="onUserIconClicked()"></i>
+                    </div>
+               </div>
+               <div *ngIf="!isLogined">
+                    <div
+                         class="rounded border-1 border-solid border-gray-400 p-2 text-xs cursor-pointer
+                     transition-all duration-300 hover:bg-gray-100  "
+                         [routerLink]="['/login']">
+                         ثبت نام / ورود
+                    </div>
+               </div>
+          </div>
+
+          <div class="flex space-x-2 items-center w-1/2 justify-end">
+               <!-- search bar in lg -->
+               <div
+                    class="relative flex items-center w-full justify-center px-2 mt-2 hidden lg:block "
+                    style="direction: rtl;">
+                    <input type="text" #searchedByUsera
+                         (keyup.enter)="onUserSearch()"
+                         class="bg-gray-50 border w-full border-gray-400 rounded py-2 pl-10 pr-4 focus:outline-none text-sm"
+                         placeholder="جستجو کنید" />
+                    <span
+                         class="absolute inset-y-0 left-2 pl-3 flex items-center">
+                         <i class="fas fa-search cursor-pointer text-gray-400"
+                              (click)="onUserSearch()"></i>
+                    </span>
+               </div>
+
+               <div id="logo" class="cursor-pointer rounded "
+                    (click)="goToHome()">
+                    <!-- <img class="w-28 h-8 rounded mt-2" src="assets/images/logo2.png" alt="LogoSite"> -->
+                    <span>SHOP</span>
+               </div>
+               <div id="2" class="mt-3 mr-3 text-xl lg:hidden">
+                    <i (click)="onBarClicked()"
+                         class="cursor-pointer fa-solid fa-bars"></i>
+               </div>
+
+          </div>
+     </div>
+
+     <!-- search bar in sm -->
+     <div
+          class="relative flex items-center w-full justify-center px-2 lg:hidden"
+          style="direction: rtl;">
+          <input type="text" #searchedByUser (keyup.enter)="onUserSearch()"
+               class="bg-gray-50 border w-full border-gray-400 rounded py-2 pl-10 pr-4 focus:outline-none text-sm"
+               placeholder="جستجو کنید" />
+          <span class="absolute inset-y-0 left-2 pl-3 flex items-center">
+               <i class="fas fa-search cursor-pointer text-gray-400"
+                    (click)="onUserSearch()"></i>
+          </span>
+     </div>
+
+     <!-- bar in lg -->
+     <div
+          class="w-full items-center px-2 py-2 items-center justify-end space-x-6  hidden lg:flex ">
+          <div class="cursor-pointer text-md text-gray-500 ">
+               <span> پیشنهاد روز </span>
+               <i
+                    class=" text-sm text-gray-400 mt-1 fa-solid fa-hourglass-start"></i>
+          </div>
+          <div class="cursor-pointer text-md text-gray-500 ">
+               <span> پرفروش ها </span>
+               <i
+                    class=" text-sm text-gray-400 mt-1 fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <div class="cursor-pointer text-md text-gray-500 ">
+               <span> تخفیف ها </span>
+               <i class=" text-sm text-gray-400 mt-1 fa-solid fa-tag"></i>
+          </div>
+          <div class="h-full w-1 rounded bg-gray-700">|</div>
+          <div class="cursor-pointer text-lg text-gray-700 ">
+               <span> همه دسته بندی ها </span>
+               <i
+                    class="text-sm text-gray-700 cursor-pointer fa-solid fa-bars"></i>
+          </div>
+     </div>
+
+     <hr>
+</div>
+
+<!-- Sidebar -->
+
+<!-- <div id="sidebar" #navboxToMove class="fixed container top-0 left-0 right-0  bottom-0 flex flex-col 
+     overflow-scroll space-y-4 w-full h-screen bg-gray-50 p-3" [hidden]="navBoxHidden">
+
+     <div id="delIcon" class="w-full flex items-center justify-between">
+          <i class="fa-solid fa-xmark cursor-pointer text-2xl mt-2" (click)="onBarClicked()"></i>
+          <div>
+               <span>SHOP</span>
+          </div>
+     </div>
+
+     <div id="cards" class="flex flex-wrap items-center justify-center space-x-2 space-y-4">
+          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
+               <div class="flex flex-col items-center justify-center">
+                    <i class="text-lg fa-solid fa-cart-shopping"></i>
+                    <small>سبد خرید</small>
+               </div>
+          </div>
+          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
+               <div class="flex flex-col items-center justify-center">
+                    <i class="text-lg fa-solid fa-circle-question"></i>
+                    <small> دفترچه راهنما </small>
+               </div>
+          </div>
+          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
+               <div class="flex flex-col items-center justify-center">
+                    <i class="text-lg fa-solid fa-cart-shopping"></i>
+                    <small> کارت هدیه </small>
+               </div>
+          </div>
+          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
+               <div class="flex flex-col items-center justify-center">
+                    <i class="text-lg fa-solid fa-house"></i>
+                    <small> همه محصولات </small>
+               </div>
+          </div>
+          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
+               <div class="flex flex-col items-center justify-center">
+                    <i class="text-lg fa-solid fa-cart-shopping"></i>
+                    <small>سبد خرید</small>
+               </div>
+          </div>
+     </div>
+
+
+     <div class="w-full h-6 bg-gray-100"></div>
+
+
+     <div id="shop" class="flex p-3 flex-col w-full h-full bg-gray-200 rounded items-end space-y-4 ">
+
+          <div id="0" class="flex items-center space-x-1 w-full">
+               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(0)">
+                    <i class="text-sm fa-solid fa-chevron-down"></i>
+               </div>
+               <div class="w-1/5 cursor-pointer flex justify-end items-center">
+                    <a href="search/workEquipment">
+                         <span class=" transition-all duration-400 hover:text-blue-400">کفش کار</span>
+
+                    </a>
+               </div>
+          </div>
+          <div class="space-y-4 rounded mx-auto mt-1  mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
+               [hidden]="showOrHide[0]">
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کفش کوه نوردی </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کفش ضد اسید </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> پوتین و چکمه </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> کوه نوردی </span>
+               </div>
+          </div>
+
+
+
+
+          <div id="1" class="flex items-center space-x-1 w-full">
+               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(1)">
+                    <i class="text-sm fa-solid fa-chevron-down"></i>
+               </div>
+               <div class="w-1/5 cursor-pointer flex justify-end items-center">
+                    <a href="search/gatgetry">
+                         <span class=" transition-all duration-400 hover:text-blue-400"> ابزار آلات</span>
+                    </a>
+               </div>
+          </div>
+          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
+               [hidden]="showOrHide[1]">
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ابزار کارگاه </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ابزار برقی </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ابزار نجاری </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> ضد سرقت </span>
+               </div>
+          </div>
+
+
+
+
+
+
+
+          <div id="2" class="flex items-center space-x-1 w-full">
+               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(2)">
+                    <i class="text-sm fa-solid fa-chevron-down"></i>
+               </div>
+               <div class="w-1/5 cursor-pointer flex justify-end items-center">
+                    <a href="search/jacket">
+                         <span class=" transition-all duration-400 hover:text-blue-400"> کاپشن </span>
+                    </a>
+               </div>
+          </div>
+          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
+               [hidden]="showOrHide[2]">
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کاپشن کاری </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ضد اسید </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> مخصوص </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> کاپشن های آماده
+                    </span>
+               </div>
+          </div>
+
+
+
+
+
+          <div id="3" class="flex items-center space-x-1 w-full">
+               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(3)">
+                    <i class="text-sm fa-solid fa-chevron-down"></i>
+               </div>
+               <div class="w-1/5 cursor-pointer flex justify-end items-center">
+                    <a href="search/overCoat">
+                         <span class=" transition-all duration-400 hover:text-blue-400"> روپوش </span>
+
+                    </a>
+               </div>
+          </div>
+          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
+               [hidden]="showOrHide[3]">
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> روپوش کار </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> چریک </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> رنگی </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> روپوش نخی </span>
+               </div>
+          </div>
+
+
+
+
+
+
+          <div id="4" class="flex items-center space-x-1 w-full">
+               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(4)">
+                    <i class="text-sm fa-solid fa-chevron-down"></i>
+               </div>
+               <div class="w-1/5 cursor-pointer flex justify-end items-center">
+                    <a href="search/protective">
+                         <span class="transition-all duration-400 hover:text-blue-400"> ایمنی</span>
+
+                    </a>
+               </div>
+          </div>
+          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
+               [hidden]="showOrHide[4]">
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کلاه ایمنی </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> دستکش های ایمنی</span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> لوازم ایمنی تخصصی
+                    </span>
+               </div>
+               <div>
+                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> ماسک </span>
+               </div>
+          </div>
+
+     </div>
+</div> -->
+
+<!-- <app-slider></app-slider> -->

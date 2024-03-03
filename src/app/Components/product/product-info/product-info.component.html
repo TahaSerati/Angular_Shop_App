@@ -1,0 +1,88 @@
+<app-header></app-header>
+
+<div class="container">
+     <div class="flex flex-col w-full">
+          <div id="pictures"
+               class="h-64 md:h-72 lg:h-80 w-full h-96 bg-gray-100 rounded my-3 flex items-center justify-between px-3"
+               style="overflow-y: hidden;">
+               <i class="fa-solid fa-chevron-left cursor-pointer" (click)="goLeft()"></i>
+               <div class="">
+                    <img [src]="img" class="object-cover"
+                    style="height: 100%;border-radius: 10px;" alt="">
+               </div>
+               <i class="fa-solid fa-chevron-right cursor-pointer" (click)="goRight()"></i>
+          </div>
+     </div>
+     <div id="description" class="w-full d-rtl h-32 px-4 py-2 flex flex-col justify-between">
+          <div class="text-2xl">
+               <p>{{product.productDescription}}</p>
+          </div>
+
+          <div id="colors" class="flex flex-row w-full justify-between items-start">
+               <div>
+                    <p>رنگ ها : </p>
+               </div>
+               <div class="flex flex-row items-center mt-1">
+                    <div *ngFor="let color of product.colors">
+                         <i class="fa-regular fa-circle rounded-full text-lg cursor-pointer ml-2"
+                              [style.backgroundColor]="color" [style.color]="color"></i>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <div id="price" class="w-full flex items-center px-4 py-1 justify-between  ">
+          <div class="flex items-center space-x-2">
+               <div class="text-md text-gray-400">
+                    <p>تومان</p>
+               </div>
+               <div class="text-3xl">
+                    <p>{{product.productPrice}}</p>
+               </div>
+          </div>
+          <div class="text-xl ">
+               <p>
+                    : قیمت
+               </p>
+          </div>
+     </div>
+     <br>
+     <hr>
+
+     <div id="description" class="flex flex-col space-y-1 items-end px-4 py-2 bg-gray-100 rounded w-full  my-2">
+          <div class="text-xl text-gray-600">
+               <p> : ویژگی های محصول </p>
+          </div>
+          <div *ngFor="let feature of product.productFeatures | keyvalue">
+               {{ feature.key }} : {{ feature.value }}
+          </div>
+     </div>
+
+     <div *ngIf="product.isAvailable">
+          <div (click)="onAddToCart(product)" class="shadow-md w-full h-12 rounded bg-blue-500 text-xl text-white flex items-center justify-center my-3 
+          cursor-pointer hover:bg-blue-700 ">
+               <span>افزودن به سبد خرید</span>
+          </div>
+     </div>
+     <div *ngIf="!product.isAvailable">
+          <div class="w-full h-8 rounded bg-gray-500 text-white flex items-center justify-center my-3 ">
+               <span> این کالا در انبار موجود نمیباشد </span>
+          </div>
+     </div>
+
+
+     <div id="likeProducts" class="w-full flex flex-col items-center justify-between px-4 py-2">
+          <div class="flex w-full items-center justify-end text-xl">
+               <p class="m-0">کالا های مشابه</p>
+          </div>
+          <div id="items" class="w-full flex items-center justify-start p-2 gap-1 overflow-scroll" id="scroll"
+               style="direction: rtl;">
+               <div *ngFor="let instance of instanceProducts$ | async">
+                    <app-card [product]="instance"></app-card>
+               </div>
+               <div></div>
+          </div>
+     </div>
+</div>
+
+<app-footer></app-footer>

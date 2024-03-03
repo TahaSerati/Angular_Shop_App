@@ -1,0 +1,15 @@
+.active {
+     background-color: rgb(91, 181, 185);
+     color: rgb(0, 0, 0);
+}
+
+#scroll::-webkit-scrollbar {
+     display: none;
+     /* For Chrome, Safari, and Opera */
+
+}
+
+#scroll {
+     scrollbar-width: none;
+     -ms-overflow-style: none;
+}

@@ -1,0 +1,47 @@
+<div
+  class="bg-white h-96 w-64 px-2 py-4 rounded-sm flex flex-col items-center justify-between cursor-pointer hover:shadow-lg border">
+  <div class="bg-red-600 w-full h-60" (click)="onCardClicked()">
+    <img [src]="product.productImagesAddress[0]" class="object-cover w-full h-full">
+    <!-- <img
+      src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?w=740&t=st=1708005607~exp=1708006207~hmac=6ffb158724fd48b397571646bba99395a52ca01199d69e330f81f9e53d45ea3d"
+      class="object-cover w-full h-full"> -->
+  </div>
+  <div class="h-36 w-full px-2 py-2 flex flex-col items-center justify-between">
+    <div class=" w-full h-1/2 text-right text-lg overflow-hidden whitespace-nowrap "> {{product.productDescription}}
+    </div>
+    <div class=" w-full h-1/2 flex items-center justify-between">
+      <ng-container *ngIf="product.isAvailable">
+        <div class="w-1/2 h-full flex flex-col">
+          <div class="w-full h-1/2 flex items-center gap-2 overflow-hidden">
+            <div>تومان</div>
+            <div>{{product.productPrice}}</div>
+          </div>
+          <ng-container *ngIf="product.hasDiscount">
+            <div class="w-full h-1/2 text-neutral-500 text-center line-through overflow-hidden">
+              {{product.discountAmount}}
+            </div>
+          </ng-container>
+        </div>
+        <ng-container *ngIf="product.hasDiscount">
+
+          <div class=" w-1/2 h-full text-sm flex items-start justify-end">
+            <div class="bg-rose-700 w-10 flex items-center justify-center gap-1 rounded-full text-white text-sm ">
+              <div style="font-size: 10px;">
+                %
+              </div>
+              <div>
+                {{product.discountPrecent}}
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="!product.isAvailable">
+        <div class="w-full bg-red-100 text-center text-2xl rounded-sm">
+          ناموجود
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

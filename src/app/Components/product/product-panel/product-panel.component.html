@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<ng-container [ngSwitch]="ParamsMode">
+     <ng-container *ngSwitchCase="'0'">
+          <div class="container w-96 my-3 flex flex-wrap items-center justify-center gap-2 hidden lg:flex">
+               <ng-container *ngFor="let product of allRandomProducts$ | async">
+                    <app-card [product]="product"></app-card>
+               </ng-container>
+          </div>
+
+          <div class="container w-96 my-3 flex flex-wrap items-center justify-center lg:hidden">
+               <ng-container *ngFor="let product of allRandomProducts$ | async">
+                    <app-card-sm [product]="product"></app-card-sm>
+               </ng-container>
+          </div>
+     </ng-container>
+     <ng-container *ngSwitchCase="'1'">
+          <div class="container w-96 my-3 flex flex-wrap items-center justify-center gap-2 hidden lg:flex">
+               <ng-container *ngFor="let product of allRandomProductsWithMain$ | async">
+                    <app-card [product]="product"></app-card>
+               </ng-container>
+          </div>
+
+          <div class="container w-96 my-3 flex flex-wrap items-center justify-center lg:hidden">
+               <ng-container *ngFor="let product of allRandomProductsWithMain$ | async">
+                    <app-card-sm [product]="product"></app-card-sm>
+               </ng-container>
+          </div>
+     </ng-container>
+     <ng-container *ngSwitchCase="'2'">
+          <div class="container w-96 my-3 flex flex-wrap items-center justify-center gap-2 hidden md:flex">
+               <ng-container *ngFor="let product of allRandomProductsWithMainAndSub$ | async">
+                    <app-card [product]="product"></app-card>
+               </ng-container>
+          </div>
+
+          <div class="container mb-4 flex flex-wrap items-center justify-center md:hidden">
+               <ng-container *ngFor="let product of allRandomProductsWithMainAndSub$ | async">
+                    <app-card-sm class="w-full" [product]="product"></app-card-sm>
+               </ng-container>
+          </div>
+     </ng-container>
+</ng-container>
+
+
+<app-footer></app-footer>

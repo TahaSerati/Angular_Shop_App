@@ -1,0 +1,106 @@
+<app-header></app-header>
+
+<div class="container">
+     <div id="userIcon" class="w-full bg-gray-100 rounded pb-3 pt-1 px-2" style="border:1px solid rgb(214, 214, 214) ;">
+          <div class="w-full flex items-center justify-between px-3 py-2">
+               <i></i>
+               <div class="flex items-cetner space-x-3 ">
+                    <div class="flex flex-col text-sm space-y-2">
+                         <div>
+                              <span>GEUST1234</span>
+                              <span>کاربر</span>
+                         </div>
+                         <div class="text-gray-400">
+                              <span>{{loginedUser.userPhone}}</span>
+                         </div>
+                    </div>
+                    <div class="rounded-full bg-red-200 flex items-center justify-center w-11 h-11">
+                         <img class="rounded-full w-full h-full" src="assets/images/profile.png" alt="">
+                    </div>
+               </div>
+          </div>
+          <div class="bg-green-200 rounded flex items-center justify-between px-3 py-2"
+               style="border:1px solid rgb(0, 204, 61)">
+               <div>
+                    <span> تومان </span>
+               </div>
+               <div>
+                    <span> : کیف پول </span>
+               </div>
+          </div>
+     </div>
+
+
+     <div class="w-full flex flex-col space-y-4 rounded  mt-4 py-2 px-2">
+
+          <div (click)="goToAllOrders()"
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+                    <div class="text-lg">
+                         <span> سفارش ها </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-regular fa-credit-card text-sm"></i>
+                    </div>
+               </div>
+          </div>
+
+          <div (click)="goToMyAddress()"
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+
+                    <div class="text-lg">
+                         <span> آدرس های شما </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-solid fa-location-dot text-sm"></i>
+                    </div>
+               </div>
+          </div>
+
+          <div (click)="goToLikes()"
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+
+                    <div class="text-lg">
+                         <span> مورد علاقه </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-regular fa-heart text-sm"></i>
+                    </div>
+               </div>
+          </div>
+
+          <div (click)="logOut()"
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+
+                    <div class="text-lg">
+                         <span> خروج از حساب </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-solid fa-power-off text-sm"></i>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+</div>
+
+<app-footer></app-footer>

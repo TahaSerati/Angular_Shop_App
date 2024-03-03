@@ -1,0 +1,106 @@
+<app-header></app-header>
+
+<div class="container my-4">
+
+     <div class="flex w-full items-center justify-end  ">
+          <div class="transition-all duration-400 cursor-pointer hover:text-blue-600 flex items-center space-x-2"
+          (click)="goBack()">
+               <div>
+                    <span> بازگشت </span>
+               </div>
+               <div>
+                    <i class="fa-solid fa-arrow-right-to-bracket text-sm"></i>
+               </div>
+          </div>
+     </div>
+
+
+     <div class="flex flex-col w-full items-end justify-center mt-4 mb-6">
+          <div class="text-2xl">
+               <span> تغییر کالا </span>
+          </div>
+          <div class="text-xl mt-6 text-gray-500">
+               <span> انتخاب کنید </span>
+          </div>
+     </div>
+
+     <div class="w-full flex items-center justify-center">
+          <input type="text" class="rounded-sm w-2/5 bg-gray-200 py-1 px-2  
+          focus:outline-none d-rtl" style="border : 1px solid rgb(136, 136, 136)" placeholder="جستجو">     
+     </div>
+
+     <!-- <div class="w-full flex items-center justify-center">
+          <span>جستجو برای :</span>
+          <span>همه</span>
+     </div> -->
+
+     
+     <div class="w-full overflow-scroll md:flex flex-wrap items-center justify-center">
+     <ng-container *ngFor="let product of productsAll">
+               <div class="mx-2 my-3">
+
+
+                    <div class="flex rounded cursor-pointer h-full md:flex-col-reverse items-center justify-between w-full md:w-64"
+                         style=" border: 1px solid #f0f0f0;" (click)="onCardClicked(product)">
+
+                         <div id="description" class=" w-full h-full flex flex-col space-y-4"
+                              style="padding: 3rem 1.5rem;">
+                              <div class="flex justify-end md:items-end w-full text-sm">
+                                   <span> {{product.productDescription}} </span>
+                              </div>
+
+
+                              <ng-container *ngIf="product.isAvailable">
+                                   <div class="flex justify-start md:items-start w-full
+                                   text-xs" style="border-radius: 3px;">
+
+                                        <div class="w-7 h-6 bg-yellow-500 flex items-center justify-center -mt-1"
+                                             style="border-radius: 3px;">
+                                             <div class="flex items-end space-x-3">
+                                                  <div> %{{product.discountPrecent}} </div>
+                                             </div>
+                                        </div>
+
+                                        <div class="line-throw ml-3">{{product.discountAmount}}</div>
+
+
+                                   </div>
+
+                                   <div class="flex w-full justify-start md:items-start">
+                                        <div class="flex items-end space-x-3">
+                                             <div class="text-gray-500">
+                                                  <span>تومان</span>
+                                             </div>
+                                             <div class="text-2xl">{{product.productPrice}}</div>
+                                        </div>
+
+                                   </div>
+                              </ng-container>
+                              <ng-container *ngIf="!product.isAvailable">
+                                   <div class="flex 2-full justify-end md:items-center " style="margin: 30px 0">
+                                        <div>
+                                             <span>ناموجود</span>
+                                        </div>
+                                   </div>
+                              </ng-container>
+                         </div>
+                         <div id="image" class="w-full h-44 p-3 bg-blue-400" style="background-size: cover ;
+                              background-position: center;background-image: url({{product.productImagesAddress[0]}});">
+                              <div>
+                                   <!-- <img class="w-full h-22" [src]="product.productImagesAddress[0]" alt=""> -->
+                              </div>
+                         </div>
+                    </div>
+
+
+
+               </div>
+          </ng-container>
+     </div>
+
+
+
+
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,107 @@
+<section class="container h-screen px-6 py-3 flex items-center justify-center">
+  <div class="w-10/12 p-3 flex flex-col items-center gap-4">
+    <article class="flex items-center justify-center rounded-sm border ">
+      <div
+        class="w-20 h-10 flex items-center justify-center rounded-sm cursor-pointer"
+        [ngClass]="{ active: active == 'register' }">
+        <button type="button">ثبت نام</button>
+      </div>
+
+      <div
+        class="w-20 h-10 flex items-center justify-center rounded-sm cursor-pointer"
+        [ngClass]="{ active: active == 'login' }" [routerLink]="['/login']">
+        <button type="button">ورود</button>
+      </div>
+    </article>
+    <div class="text-2xl">
+      <span> ثبت نام در سایت </span>
+    </div>
+    <form
+      [formGroup]="registerForm"
+      class="flex flex-col items-center gap-3"
+      (ngSubmit)="onUserRegister()">
+      <div class="form_group">
+        <div class="label_container">
+          <!-- <label for="userPhone" class="form_label"> شماره تلفن </label> -->
+        </div>
+
+        <!-- <div id="error"
+          *ngIf="
+                  registerForm.get('userPhone').errors?.['required'] && 
+                  registerForm.get('userPhone').touched
+              "
+          class="bg-red-500 mx-auto mb-1 py-1  w-8/12 rounded-sm flex item-center justify-center text-white text-sm">
+          <p class="m-0"> شماره خود را وارد کنید </p>
+        </div> -->
+        <div
+          id="error"
+          class="w-full text-center rounded p-2 my-3 bg-red-500 flex items-center justify-center"
+          *ngIf="
+                               registerForm.get('userPhone').touched &&
+                               registerForm.get('userPhone').errors?.['required'] ||
+                               registerForm.get('userPhone').touched &&
+                               registerForm.get('userPhone').errors?.['invalidNumberOrLength']
+                               ">
+          <span class="text-gray-100 text-sm">
+            لطفا یک شماره موبایل معتبر وارد کنید
+          </span>
+        </div>
+
+        <input
+          class="rounded bg-gray-100 border-1 border focus:outline-none shadow-sm h-12 border-none py-3 px-4"
+          type="text"
+          style="direction: rtl; border-radius: 3px"
+          formControlName="userPhone"
+          placeholder="شماره مبایل یا ایمیل " />
+      </div>
+
+      <!-- <div class="form_group">
+        <div class="label_container">
+          <label for="userEmail" class="form_label"> ایمیل </label>
+        </div>
+        <input
+          class="rounded bg-gray-100 border-1 border focus:outline-none shadow-sm h-12 border-none py-3 px-4"
+          type="text"
+          style="direction: rtl; border-radius: 3px"
+          placeholder="ایمیل"
+        />
+      </div> -->
+
+      <div class="form_group">
+        <!-- <div class="label_container">
+          <label for="password" class="form_label"> گذرواژه </label>
+        </div> -->
+
+        <div id="error"
+          *ngIf="
+                  registerForm.get('password').errors?.['required'] && 
+                  registerForm.get('password').touched
+              "
+          class="bg-red-500 mx-auto mb-1 py-1  w-8/12 rounded-sm flex item-center justify-center text-white text-sm">
+          <p class="m-0"> گذرواژه ای وارد </p>
+        </div>
+
+        <input
+          class="rounded bg-gray-100 border-1 border focus:outline-none shadow-sm h-12 border-none py-3 px-4"
+          type="text"
+          style="direction: rtl; border-radius: 3px"
+          formControlName="password"
+          placeholder="گذرواژه" />
+
+      </div>
+
+      <div class="w-full">
+        <button
+          type="submit"
+          class="w-full h-10 rounded-sm bg-blue-600 hover:bg-blue-800 text-white">
+          ثبت نام
+        </button>
+      </div>
+
+      <!-- <div class="">
+        <span>در حال حاضر حساب کاربری دارید؟ </span>
+        <a [routerLink]="['/login']">ورود</a>
+      </div> -->
+    </form>
+  </div>
+</section>

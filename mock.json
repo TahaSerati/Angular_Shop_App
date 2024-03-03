@@ -1,0 +1,335 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "taha",
+      "userPhone": "09908801459",
+      "userEmail": "taha@gmail.com",
+      "password": "12345678",
+      "productsInCart": [
+        1,
+        2
+      ],
+      "isLogined": false
+    },
+    {
+      "id": 2,
+      "userName": "mhmd",
+      "userPhone": "09908801459",
+      "userEmail": "mhmd@gmail.com",
+      "password": "12345678",
+      "productsInCart": [
+        2
+      ],
+      "isLogined": false
+    },
+    {
+      "id": 3,
+      "userName": "reza",
+      "userPhone": "09908801459",
+      "userEmail": "reza@gmail.com",
+      "password": "12345678",
+      "productsInCart": [
+        1
+      ],
+      "isLogined": false
+    },
+    {
+      "userName": "taham",
+      "password": "123",
+      "email": "123@123.com",
+      "id": 4
+    },
+    {
+      "userName": "ali",
+      "password": "mmm",
+      "email": "mmm@mmm.com",
+      "id": 5
+    },
+    {
+      "userPhone": "asd",
+      "password": "aasdasd",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 6
+    },
+    {
+      "userPhone": "سلام",
+      "password": "1234",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 7
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345678",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 8
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345678",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 9
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345678",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 10
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345677",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 11
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "777777",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 12
+    },
+    {
+      "userPhone": "11111111111",
+      "password": "1111",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 13
+    },
+    {
+      "userPhone": null,
+      "password": null,
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 14
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "asd",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 15
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345678",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 16
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345678",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 17
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345678",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 18
+    },
+    {
+      "userPhone": "09908801459",
+      "password": "12345678",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
+      "id": 19
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productName": "کفش",
+      "productMainCategory": "workEquipment",
+      "productSubCategory": "shoe",
+      "productMainCategoryPersian": "لوازم کار",
+      "productSubCategoryPersian": "کفش کار",
+      "productImagesAddress": [
+        "assets/images/shoePic/shoe1.jpg",
+        "assets/images/shoePic/shoe2.jpg"
+      ],
+      "productDescription": "کفش کوه نوردی",
+      "isMultipule": true,
+      "colors": [
+        "blue",
+        "red",
+        "purple"
+      ],
+      "productPrice": "٣,٠٠٠,٠٠٠",
+      "hasDiscount": false,
+      "discountAmount": "٢٠,٠٠٠ ",
+      "discountPrecent": "١٠",
+      "isAvailable": true,
+      "availableAmount": 10,
+      "productFeatures": {
+        "سایز": "42"
+      },
+      "searchItems": [
+        "کفش",
+        "کفش حرفه ای"
+      ]
+    },
+    {
+      "id": 2,
+      "productName": "کفش",
+      "productMainCategory": "workEquipment",
+      "productSubCategory": "shoe",
+      "productMainCategoryPersian": "لوازم کار",
+      "productSubCategoryPersian": "کفش کار",
+      "productImagesAddress": [
+        "assets/images/shoePic/shoe3.jpg",
+        "assets/images/shoePic/shoe4.jpg"
+      ],
+      "productDescription": "کفش کوه ناموجود",
+      "isMultiple": true,
+      "colors": [
+        "blue",
+        "red",
+        "purple"
+      ],
+      "productPrice": "٣,٠٠٠,٠٠٠",
+      "hasDiscount": true,
+      "discountAmount": "٢٠,٠٠٠",
+      "discountPrecent": "١٠",
+      "isAvailable": false,
+      "availableAmount": 0,
+      "productFeatures": {
+        "ویژگی شماره یک": "نمیدانم ",
+        "سایز": "42"
+      },
+      "searchItems": [
+        "کفش",
+        "کفش حرفه ای"
+      ]
+    },
+    {
+      "id": 3,
+      "productName": "کفش",
+      "productMainCategory": "workEquipment",
+      "productSubCategory": "shoe",
+      "productMainCategoryPersian": "لوازم کار",
+      "productSubCategoryPersian": "کفش کار",
+      "productImagesAddress": [
+        "assets/images/shoePic/shoe3.jpg",
+        "assets/images/shoePic/shoe4.jpg"
+      ],
+      "productDescription": "کفش کوه نوردی",
+      "isMultiple": false,
+      "colors": [
+        "red"
+      ],
+      "productPrice": "٣,٠٠٠,٠٠٠ ",
+      "hasDiscount": true,
+      "discountAmount": "٢٠,٠٠٠",
+      "discountPrecent": "١٠",
+      "isAvailable": true,
+      "availableAmount": 10,
+      "productFeatures": {
+        "سایز": "42"
+      },
+      "searchItems": [
+        "کفش",
+        "کفش حرفه ای"
+      ]
+    },
+    {
+      "id": 4,
+      "productName": "دستکش حرفه ای ",
+      "productMainCategory": "workEquipment",
+      "productSubCategory": "glove",
+      "productMainCategoryPersian": "لوازم کار",
+      "productSubCategoryPersian": "دستکش کار",
+      "productImagesAddress": [
+        "assets/images/gloves/glove1.png",
+        "assets/images/gloves/glove2.png"
+      ],
+      "productDescription": "  دستکش حرفه ای ",
+      "isMultiple": true,
+      "colors": [
+        "red",
+        "blue"
+      ],
+      "productPrice": "٣,٠٠٠,٠٠٠",
+      "hasDiscount": true,
+      "discountAmount": "٢٠,٠٠٠",
+      "discountPrecent": "١٠",
+      "isAvailable": true,
+      "availableAmount": 10,
+      "productFeatures": {
+        "سایز": "متوسط",
+        "مقاومت": "ضد اسید"
+      },
+      "searchItems": [
+        "دستکش",
+        "دستکش حرفه ای"
+      ]
+    }
+  ],
+  "sliderMd": [
+    {
+      "sliderName": "دستکش",
+      "ImgAddress": "assets/images/gloves/glove1.png",
+      "sliderMainCategory": "workEquipment",
+      "sliderSubCategory": "glove"
+    },
+    {
+      "sliderName": "کفش حرفه ای",
+      "ImgAddress": "assets/images/shoePic/shoe1.jpg",
+      "sliderMainCategory": "workEquipment",
+      "sliderSubCategory": "shoe"
+    },
+    {
+      "sliderName": "کفش",
+      "ImgAddress": "assets/images/shoePic/shoe2.jpg",
+      "sliderMainCategory": "workEquipment",
+      "sliderSubCategory": "shoe"
+    },
+    {
+      "sliderName": "کاپشن",
+      "ImgAddress": "assets/images/jacket/jacket1.png",
+      "sliderMainCategory": "workEquipment",
+      "sliderSubCategory": "shoe"
+    },
+    {
+      "sliderName": "کاپشن",
+      "ImgAddress": "assets/images/jacket/jacket2.png",
+      "sliderMainCategory": "workEquipment",
+      "sliderSubCategory": "shoe"
+    },
+    {
+      "sliderName": "کاپشن",
+      "ImgAddress": "assets/images/jacket/jacket3.png",
+      "sliderMainCategory": "workEquipment",
+      "sliderSubCategory": "shoe"
+    },
+    {
+      "sliderName": "کفش",
+      "ImgAddress": "assets/images/shoePic/shoe3.jpg",
+      "sliderMainCategory": "workEquipment",
+      "sliderSubCategory": "shoe"
+    }
+  ]
+}

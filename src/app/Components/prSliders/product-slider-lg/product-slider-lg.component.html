@@ -1,0 +1,26 @@
+<div class="container">
+     <div class="w-full p-3 flex flex-col items-center gap-4 overflow-scroll" id="scroll">
+          <div id="1" class="w-full flex items-center justify-start">
+               <div class="px-2 py-1 rounded-sm flex items-center -mt-3 cursor-pointer hover:bg-blue-600 hover:text-white "
+                    (click)="onSeeAllProducts()">
+                    <i class="text-sm fa-solid fa-caret-left"></i>
+                    <span class="text-sm text-dark-300 ml-2 ">مشاهده همه</span>
+               </div>
+          </div>
+          <!-- lg -->
+          <div class="w-full">
+               <div class="flex items-center justify-end p-2 gap-2 overflow-scroll" id="scroll" style="min-width: fit-content;"
+                    id="scroll">
+                    <div *ngFor="let product of sliderProductContainer$ | async">
+                         <app-card [product]="product"></app-card>
+                    </div>
+               </div>
+          </div>
+          <!-- sm mode -->
+          <!-- <div class="w-full flex items-center justify-end p-2 overflow-scroll gap-2 lg:hidden" id="scroll">
+               <div *ngFor="let product of sliderProductContainer$ | async">
+                    <app-card-sm [product]="product"></app-card-sm>
+               </div>
+          </div> -->
+     </div>
+</div>
