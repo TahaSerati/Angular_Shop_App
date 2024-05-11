@@ -10,7 +10,7 @@ import { DashboardComponent } from './Components/user/dashboard/dashboard.compon
 import { AddressComponent } from './Components/user/address/address.component';
 import { OrdersComponent } from './Components/user/orders/orders.component';
 import { LikesComponent } from './Components/user/likes/likes.component';
-import { AdminPanelComponent } from './Components/user/admin-panel/admin-panel.component';
+import { AdminPanelComponent } from './Components/admin/admin-panel/admin-panel.component';
 import { AddNewProductComponent } from './Components/user/add-new-product/add-new-product.component';
 import { ChangeProductComponent } from './Components/user/change-product/change-product.component';
 import { DeleteProductComponent } from './Components/user/delete-product/delete-product.component';
@@ -18,6 +18,9 @@ import { ProductPanelComponent } from './Components/product/product-panel/produc
 import { CategoriesComponent } from './Components/pages/categories/categories.component';
 import { authGuard } from './Guards/auth.guard';
 import { RegisterComponent } from './Components/auth/register/register.component';
+import { CategoryPanelComponent } from './Components/admin/category-panel/category-panel.component';
+import { EditCategoryComponent } from './Components/admin/edit-category/edit-category.component';
+import { AddCategoryComponent } from './Components/admin/add-category/add-category.component';
 
 const routes: Routes = [
   // pages
@@ -40,6 +43,9 @@ const routes: Routes = [
   { path: 'adminPanel/addNewProduct', component: AddNewProductComponent },
   { path: 'adminPanel/changeProduct', component: ChangeProductComponent },
   { path: 'adminPanel/deleteProduct', component: DeleteProductComponent },
+  { path: 'adminPanel/categoryPanel', component: CategoryPanelComponent },
+  { path: 'adminPanel/categoryPanel/edit/:id', component: EditCategoryComponent },
+  { path: 'adminPanel/categoryPanel/addcategory', component: AddCategoryComponent },
 
   // products
   { path: 'products', component: ProductPanelComponent },

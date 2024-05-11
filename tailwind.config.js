@@ -23,6 +23,10 @@ module.exports = {
       width: {
         '22': '85px', // Define a custom width size
         'custom-lg': '600px', // Define another custom width size
+        '1200-px': '1200px', // Define another custom width size
+        '600-px': '600px', // Define another custom width size
+        '700-px': '700px', // Define another custom width size
+        '900-px': '900px', // Define another custom width size
       },
       height: {
         '22': '85px', // Define a custom height size

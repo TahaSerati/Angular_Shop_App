@@ -13,29 +13,34 @@ export class AuthService implements OnInit {
   isLogined: boolean = false
   isAdmin: boolean = false
 
-  constructor(private _httpService: HttpService) { }
+  constructor(private _httpService: HttpService) {
+    this.checkUser()
+  }
 
 
   ngOnInit() {
-    this.loginedUser = JSON.parse(localStorage.getItem("LoginedUser")) || null
 
-    this.loginedUser.isLogined = true
-    this.isLogined = this.loginedUser.isLogined ? true : false
-    if (this.loginedUser.role == 'admin') {
-      this.isAdmin = true
-    }
   }
 
+  checkUser() {
+    if (JSON.parse(localStorage.getItem("LoginedUser")) != null) {
+      this.loginedUser = JSON.parse(localStorage.getItem("LoginedUser"))
+      this.isLogined = this.loginedUser.isLogined ? true : false
+    }
+  }
+  
   loginTheUser(user: IUser) {
     // must be in cookie (backEnd) :
+    user.isLogined = true
     localStorage.setItem("LoginedUser", JSON.stringify(user))
+    this.loginedUser = JSON.parse(localStorage.getItem("LoginedUser"))
+    this.isLogined = this.loginedUser.isLogined ? true : false
     //
   }
 
   logOut() {
     this.loginedUser.isLogined = false
     this.isLogined = false
-    this.isAdmin = false
     this.loginedUser = null
     localStorage.removeItem("LoginedUser")
   }

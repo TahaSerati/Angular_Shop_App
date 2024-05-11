@@ -24,6 +24,8 @@ export class HeaderComponent implements OnInit {
     'cart': false,
     'list': false,
   }
+  // mega menu
+  openMegaMenu = false
 
   constructor(private _authSerivce: AuthService, private _router: Router, private httpService: HttpService) { }
 
@@ -81,7 +83,9 @@ export class HeaderComponent implements OnInit {
     this.activeIcon[icon] = true
   }
 
-
+  openMegaMenutoggle() {
+    this.openMegaMenu = !this.openMegaMenu
+  }
 
 }
 

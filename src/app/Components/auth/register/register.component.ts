@@ -15,18 +15,10 @@ export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
   active = 'register';
-  hasRegisterd: boolean
-
+  isLoading: boolean = false
+  showAlertBox : boolean = false
+  message : string 
   constructor(private _httpService: HttpService, private _router: Router, private _authSerivce: AuthService) {
-    // this.registerForm = new FormGroup({
-    //   'userName': new FormControl(null, []),
-    //   'userPhone': new FormControl(null, [],),
-    //   'userEmail': new FormControl(null, []),
-    //   'password': new FormControl(null, []),
-    //   'productsInCart': new FormArray([
-    //     new FormControl(null, []),
-    //   ])
-    // })
 
     this.registerForm = new FormGroup({
       'userPhone': new FormControl(null, [Validators.required, numberAndLengthValidator()],),
@@ -40,64 +32,52 @@ export class RegisterComponent implements OnInit {
   }
 
   onUserRegister() {
-    // const hasRegisterd = this._httpService.getAllUsers().subscribe((allUsers) =>
-    //   allUsers.some((user) => user.password === password || user.userPhone === userPhone))
-
-    if (this.registerForm.valid) {
-
-      const userPhone = this.registerForm.controls['userPhone'].value
-      const password = this.registerForm.controls['password'].value
-
-      // this._httpService.getAllUsers().pipe(
-      //   map((allUsers) => {
-      //     let has = allUsers.some((user) => user.password == password && user.userPhone == userPhone)
-      //     if (has == true) {
-      //       return true
-      //     } else {
-      //       return false
-      //     }
-      //   })
-      // ).subscribe((val) => { this.hasRegisterd = val })
-
-      this._httpService.getAllUsers().pipe(
-
-        map((allUsers) => {
-          let has = allUsers.some((user) => user.password == password && user.userPhone == userPhone)
-          if (has == true) {
-            return true
-          } else {
-            return false
-          }
-        })
-
-      ).subscribe((val) => { this.hasRegisterd = val })
-
-      if (this.hasRegisterd) {
-        let errorMessage = "شما قبلا ثبت نام کرده اید لطفا وارد سیتسم شوید";
-        console.log(errorMessage)
-        return;
-      }
-
-      let user = {
-        "userPhone": userPhone,
-        "password": password,
-        "productsInCart": [],
-        "isLogined": true,
-        "role": "admin"
-      }
-
-      this._httpService.addNewUser(user).subscribe((newUser) => {
-        if (newUser) {
-          this._authSerivce.loginTheUser(newUser)
-          this._router.navigate(['./'])
-        } else {
-          let errorMessage = "مشکلی پیش آمد لطفا بعدا تلاش کنید"
-          console.log(errorMessage)
-        }
-      });
-    } else {
-      console.log('invalid')
+    if (!this.registerForm.valid) {
+      console.log("invalid")
+      return
     }
+
+    this.isLoading = true
+    const userPhone = this.registerForm.controls['userPhone'].value
+    const password = this.registerForm.controls['password'].value
+
+    this._httpService.getAllUsers().pipe(
+      map((allUsers) => {
+        let has = allUsers.some((user) => user.password == password && user.userPhone == userPhone)
+        if (has == true) {
+          return true
+        } else {
+          return false
+        }
+      })
+    ).subscribe((val) => {
+      if (val == true) {
+        this.message = "شما قبلا ثبت نام کرده اید لطفا وارد سیتسم شوید";
+        this.showAlertBox = true
+      } else {
+        let user = {
+          "userPhone": userPhone,
+          "password": password,
+          "productsInCart": [],
+          "isLogined": true,
+          "role": "admin"
+        }
+
+        this._httpService.addNewUser(user).subscribe((newUser) => {
+          if (newUser) {
+            this._authSerivce.loginTheUser(newUser)
+            this._router.navigate(['./'])
+          } else {
+            this.message = "مشکلی پیش آمد لطفا بعدا تلاش کنید"
+            this.showAlertBox = true
+          }
+        });
+      }
+    })
+
+    this.isLoading = false
+
+
 
   }
 

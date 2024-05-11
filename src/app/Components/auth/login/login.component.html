@@ -1,79 +1,89 @@
-<app-alert-box *ngIf="showAlertBox" [message]="message"
-  (click)="showAlertBox = false"></app-alert-box>
+<ng-container *ngIf="isLoading">
+  <div class="w-full h-screen flex flex-col items-center justify-center">
+    <app-sppiner></app-sppiner>
+  </div>
+</ng-container>
 
-<div class="container h-screen flex flex-col items-center justify-center gap-6">
-  <article class="flex items-center justify-center rounded-sm border">
-    <div
-      class="w-20 h-10 flex items-center justify-center rounded-sm cursor-pointer"
-      [ngClass]="{ active: active == 'register' }"
-      [routerLink]="['/register']">
-      <button type="button">ثبت نام</button>
-    </div>
+<ng-container *ngIf="!isLoading">
+  <app-alert-box *ngIf="showAlertBox" [message]="message"
+    (click)="showAlertBox = false"></app-alert-box>
 
-    <div
-      class="w-20 h-10 flex items-center justify-center rounded-sm cursor-pointer"
-      [ngClass]="{ active: active == 'login' }">
-      <button type="button">ورود</button>
-    </div>
-  </article>
-  <form [formGroup]="loginForm" (ngSubmit)="onUserLogin()">
-    <div class="rounded flex items-center justify-center w-full">
-      <div class="flex flex-col space-y-4 items-end ">
-        <div class="text-2xl">
-          <span>ورود به حساب کاربری </span>
-        </div>
-        <!-- <div class="text-gray-300 text-md">شماره موبایل خود را وارد کنید</div> -->
-        <div class="flex flex-col item-center justify-center">
-          <div
-            id="error"
-            class="w-full rounded p-2 my-3 bg-red-500 flex items-center justify-center"
-            *ngIf="
+  <div
+    class="container h-screen flex flex-col items-center justify-center gap-6">
+    <article class="flex items-center justify-center rounded-sm border">
+      <div
+        class="w-20 h-10 flex items-center justify-center rounded-sm cursor-pointer"
+        [ngClass]="{ active: active == 'register' }"
+        [routerLink]="['/register']">
+        <button type="button">ثبت نام</button>
+      </div>
+
+      <div
+        class="w-20 h-10 flex items-center justify-center rounded-sm cursor-pointer"
+        [ngClass]="{ active: active == 'login' }">
+        <button type="button">ورود</button>
+      </div>
+    </article>
+    <form [formGroup]="loginForm" (ngSubmit)="onUserLogin()">
+      <div class="rounded flex items-center justify-center w-full">
+        <div class="flex flex-col space-y-4 items-end ">
+          <div class="text-2xl">
+            <span>ورود به حساب کاربری </span>
+          </div>
+          <!-- <div class="text-gray-300 text-md">شماره موبایل خود را وارد کنید</div> -->
+          <div class="flex flex-col item-center justify-center">
+            <div
+              id="error"
+              class="w-full rounded p-2 my-3 bg-red-500 flex items-center justify-center"
+              *ngIf="
                                  loginForm.get('userPhone').touched &&
                                  (loginForm.get('userPhone').errors?.['required'] ||
                                  loginForm.get('userPhone').errors?.['invalidNumberOrLength'])
                                  ">
-            <span class="text-gray-100 text-sm">
-              لطفا یک شماره موبایل معتبر وارد کنید
-            </span>
+              <span class="text-gray-100 text-sm">
+                لطفا یک شماره موبایل معتبر وارد کنید
+              </span>
+            </div>
+            <input
+              class="w-full rounded bg-gray-100 border-1 border focus:outline-none shadow-sm h-12 py-3 px-4"
+              type="text"
+              style="direction: rtl; border-radius: 3px"
+              placeholder="شماره مبایل خود را وارد کنید"
+              formControlName="userPhone" />
+
           </div>
-          <input
-            class="w-full rounded bg-gray-100 border-1 border focus:outline-none shadow-sm h-12 py-3 px-4"
-            type="text"
-            style="direction: rtl; border-radius: 3px"
-            placeholder="شماره مبایل خود را وارد کنید"
-            formControlName="userPhone" />
 
-        </div>
-
-        <div>
-          <div id="error"
-            *ngIf="
+          <div>
+            <div id="error"
+              *ngIf="
                   loginForm.get('password').errors?.['required'] && 
                   loginForm.get('password').touched 
               "
-            class="bg-red-500 mx-auto mb-1 py-1  w-8/12 rounded-sm flex item-center justify-center text-white text-sm">
-            <p class="m-0"> گذرواژه ای وارد </p>
+              class="bg-red-500 mx-auto mb-1 py-1  w-8/12 rounded-sm flex item-center justify-center text-white text-sm">
+              <p class="m-0"> گذرواژه ای وارد </p>
+            </div>
+
+            <!-- <i></i> -->
+            <input
+              class="w-full rounded bg-gray-100 border-1 border focus:outline-none shadow-sm h-12 border-none py-3 px-4"
+              type="password"
+              style="direction: rtl; border-radius: 3px"
+              placeholder="گذرواژه خود را وارد کنید"
+              formControlName="password" />
+
+            <!-- <i></i> -->
           </div>
 
-          <!-- <i></i> -->
-          <input
-            class="w-full rounded bg-gray-100 border-1 border focus:outline-none shadow-sm h-12 border-none py-3 px-4"
-            type="text"
-            style="direction: rtl; border-radius: 3px"
-            placeholder="گذرواژه خود را وارد کنید"
-            formControlName="password" />
-
-          <!-- <i></i> -->
-        </div>
-
-        <div class="w-full" style="border-radius: 3px">
-          <button
-            type="submit"
-            class="flex items-center justify-center hover:bg-blue-500 w-full h-10 bg-blue-600 shadow-sm rounded-sm text-white">
-            ورود
-          </button>
+          <div class="w-full" style="border-radius: 3px">
+            <button
+              type="submit"
+              class="flex items-center justify-center hover:bg-blue-500 w-full h-10 bg-blue-600 shadow-sm rounded-sm text-white">
+              ورود
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
+
+</ng-container>

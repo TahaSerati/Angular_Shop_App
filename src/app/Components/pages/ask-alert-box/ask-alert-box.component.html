@@ -1,0 +1,20 @@
+<section class="w-full h-screen flex-center bg-Glass absolute" (click)="returnClicked(false)">
+     <div
+          class="bg-white rounded flex flex-col items-center mt-10 mx-10 px-3 py-2"
+          style="width: 600px;">
+          <div class="w-full text-right cursor-pointer" (click)="returnClicked(false)">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                    fill="currentColor" class="w-6 h-6"><path
+                         d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" /></svg>
+          </div>
+          <div class="w-full text-right mt-10 text-lg">
+               <p class>{{message}}</p>
+          </div>
+          
+          <div class="w-full text-right mt-10 text-lg flex items-center gap-4">
+               <button class="ctm-btn-red" (click)="returnClicked(true)">حذف</button>
+               <button class="ctm-btn-green" (click)="returnClicked(false)">برگشت</button>
+          </div>
+
+     </div>
+</section>

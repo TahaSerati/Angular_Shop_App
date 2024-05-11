@@ -18,42 +18,19 @@ export class LoginComponent {
   hasRegisterd: boolean;
   message: string
   active = 'login';
+  isLoading = false
 
   constructor(private _httpService: HttpService, private _authService: AuthService, private _router: Router) {
     this.loginForm = new FormGroup({
       "userPhone": new FormControl(null, [Validators.required, numberAndLengthValidator()]),
       "password": new FormControl(null, [Validators.required])
-      // "userPhone": new FormControl(null, [Validators.required]),
     })
-    // this.loginForm = new FormGroup({
-    //   "userPhone" : new FormControl(null , []),
-    //   "userEmail" : new FormControl(null , []),
-    // })
-
   }
 
   onUserLogin() {
-    // const phoneNumber = this.loginForm['controls']["phoneNumber"].value
-    // console.log(phoneNumber)
-
-    // if tokenInFront == token in Message => this._srvice.ligined = true
-    // else => error message
-    // if first time => login // else => register and add to database
-
-    // this._httpService.getAllUsers().subscribe((allUsers) => {
-    //   this.hasRegisterd = allUsers.some((user) => {
-    //     user.userPhone === phone && user.password === password
-    //     console.log(phone)
-    //     console.log(email)
-    //     console.log(password)
-    //     console.log("________________________________")
-
-    //     console.log(user.password)
-    //     console.log(user.userPhone)
-    //   })
-
-    // })
+    
     if (this.loginForm.valid) {
+      this.isLoading = true
       const phoneOrEmail = this.loginForm.controls["userPhone"].value
       const password = this.loginForm.controls["password"].value
 
@@ -64,11 +41,15 @@ export class LoginComponent {
         })
       ).subscribe((user) => {
         if (user) {
+          this.isLoading = false
           this._authService.loginTheUser(user)
           this._router.navigate(['/'])
         } else {
-          this.message = "!کاربری با این مشخصات پیدا نشد"
-          this.showAlertBox = true
+          setTimeout(() => {
+            this.isLoading = false
+            this.message = "!کاربری با این مشخصات پیدا نشد"
+            this.showAlertBox = true
+          }, 3000)
         }
       })
     }

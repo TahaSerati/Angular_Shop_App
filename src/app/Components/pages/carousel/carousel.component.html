@@ -1,53 +1,56 @@
-<div class="container">
-     <a id="introduce" href="https://rapidcode.ir" target="_blank">رپید کد • کتابخانه مجازی برنامه نویسان</a>
+<div class="flex">
+    <button class="go-left " (click)="goLeft()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+    </button>
 
-     <div class="rpd-slider" data-base-width="250">
-         <div class="main-wrapper">
-             <ul class="rpd-slider-wrapper">
-                 <li><a href="javascript:void(0)"><img src="static/img/1.png" alt="dragon"></a></li>
-                 <li><a href="javascript:void(0)"><img src="static/img/2.png" alt="archer"></a></li>
-                 <li><a href="javascript:void(0)"><img src="static/img/3.png" alt="x"></a></li>
-                 <li><a href="javascript:void(0)"><img src="static/img/4.png" alt="y"></a></li>
-                 <li><a href="javascript:void(0)"><img src="static/img/5.png" alt="z"></a></li>
-                 <li><a href="javascript:void(0)"><img src="static/img/6.png" alt="q"></a></li>
-                 <li><a href="javascript:void(0)"><img src="static/img/7.png" alt="r"></a></li>
-             </ul>
-             <nav class="rpd-slider-navs">
-                 <div class="nav-element previous" data-step="previous">ᐊ</div>
-                 <div class="nav-element next" data-step="next">ᐅ</div>
-             </nav>
-         </div>
-     </div>
+    <section id="carousel-main" class="carousel">
+        <div class="img-container">
+            <img src="assets/images/shoePic/shoe4.jpg">
 
+            <img src="assets/images/shoePic/shoe8.png">
+            
+            <img src="assets/images/shoePic/shoe2.jpg">
+            <!-- <img src="assets/images/shoePic/shoe3.jpg"> -->
+        </div>
 
-     <div class="rpd-slider" data-base-width="720">
-         <div class="main-wrapper">
-             <ul class="rpd-slider-wrapper">
-                 <li>
-                     <div class="wrapper-element">
-                         <img src="static/img/a.jpg" alt="car">
-                         <div class="wrapper-element-content">
-                             <h3>مرسدس بنز</h3>
-                             <p>یک ماشین گران قیمت اما شیک</p>
-                         </div>
-                     </div>
-                 </li>
-                 <li><a href="javascript:void(0)"><img src="static/img/b.jpg" alt="car"></a></li>
-                 <li>
-                     <div class="wrapper-element">
-                         <img src="static/img/c.jpg" alt="car">
-                         <div class="wrapper-element-content">
-                             <h3>بیابان</h3>
-                             <p>جایی آرام و همچنان دارای حیات و اکو سیستمی منظم</p>
-                         </div>
-                     </div>
-                 </li>
-             </ul>
-             <nav class="rpd-slider-navs">
-                 <div class="nav-element previous" data-step="previous">ᐊ</div>
-                 <div class="nav-element next" data-step="next">ᐅ</div>
-             </nav>
-         </div>
-     </div>
+        <div class="dots">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                    width="100" height="100">
+                    <circle cx="50" cy="50" r="10" fill="gray" />
+                </svg>
 
- </div>
+            </div>
+
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                    width="100" height="100">
+                    <circle cx="50" cy="50" r="10" fill="gray" />
+                </svg>
+
+            </div>
+
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+                    width="100" height="100">
+                    <circle cx="50" cy="50" r="10" fill="gray" />
+                </svg>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <button class="go-right " (click)="goRight()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
+</div>

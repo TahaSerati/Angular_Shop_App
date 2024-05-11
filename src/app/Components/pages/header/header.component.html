@@ -1,9 +1,9 @@
 
 <div class="w-full">
      <div
-          class="bg-white px-2 fixed top-0 z-50 flex h-16 w-full items-center justify-around lg:hidden shadow-sm"
+          class="bg-white px-2 fixed top-0 z-3 flex h-16 w-full items-center justify-around lg:hidden shadow-sm"
           style="padding: 12px 0; border-bottom: 1px solid rgb(199, 199, 199);">
-          <svg class="text-black w-6 h-6 text-2xl absolute top-5 right-4 z-50 "
+          <svg class="text-black w-6 h-6 text-2xl absolute top-5 right-4 z-3 "
                xmlns="http://www.w3.org/2000/svg"
                fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                stroke="currentColor">
@@ -34,10 +34,10 @@
                <path
                     d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
                <path
-                    d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                    d="m12 5.432 8.1q59 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
           </svg>
      </div>
-     
+
      <!-- cart -->
      <div id="cart"
           class=" w-12 h-12 flex flex-col items-center justify-center gap-1 cursor-pointer"
@@ -80,8 +80,10 @@
      </div>
 </div>
 
-<div class="container mx-auto flex flex-col items-center justify-center y-3 hidden lg:block">
-     <div class="w-full h-full flex justify-between items-center w-full mb-8 sticky top-0">
+<div
+     class="container mx-auto flex flex-col items-center justify-center y-3 hidden lg:block">
+     <div
+          class="w-full h-full flex justify-between items-center w-full mb-8 sticky top-0">
           <div id="1" class="flex items-center space-x-6">
                <i [routerLink]="['/cart']"
                     class="text-lg cursor-pointer fa-solid fa-cart-shopping"></i>
@@ -161,221 +163,14 @@
                <i class=" text-sm text-gray-400 mt-1 fa-solid fa-tag"></i>
           </div>
           <div class="h-full w-1 rounded bg-gray-700">|</div>
-          <div class="cursor-pointer text-lg text-gray-700 ">
+          <div
+               class="cursor-pointer text-lg text-gray-700 relative z-101" [routerLink]="" (mouseleave)="openMegaMenutoggle()" (mouseenter)="openMegaMenutoggle()">
                <span> همه دسته بندی ها </span>
                <i
                     class="text-sm text-gray-700 cursor-pointer fa-solid fa-bars"></i>
+               <app-megamenu *ngIf="openMegaMenu"></app-megamenu>
           </div>
      </div>
 
      <hr>
 </div>
-
-<!-- Sidebar -->
-
-<!-- <div id="sidebar" #navboxToMove class="fixed container top-0 left-0 right-0  bottom-0 flex flex-col 
-     overflow-scroll space-y-4 w-full h-screen bg-gray-50 p-3" [hidden]="navBoxHidden">
-
-     <div id="delIcon" class="w-full flex items-center justify-between">
-          <i class="fa-solid fa-xmark cursor-pointer text-2xl mt-2" (click)="onBarClicked()"></i>
-          <div>
-               <span>SHOP</span>
-          </div>
-     </div>
-
-     <div id="cards" class="flex flex-wrap items-center justify-center space-x-2 space-y-4">
-          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
-               <div class="flex flex-col items-center justify-center">
-                    <i class="text-lg fa-solid fa-cart-shopping"></i>
-                    <small>سبد خرید</small>
-               </div>
-          </div>
-          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
-               <div class="flex flex-col items-center justify-center">
-                    <i class="text-lg fa-solid fa-circle-question"></i>
-                    <small> دفترچه راهنما </small>
-               </div>
-          </div>
-          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
-               <div class="flex flex-col items-center justify-center">
-                    <i class="text-lg fa-solid fa-cart-shopping"></i>
-                    <small> کارت هدیه </small>
-               </div>
-          </div>
-          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
-               <div class="flex flex-col items-center justify-center">
-                    <i class="text-lg fa-solid fa-house"></i>
-                    <small> همه محصولات </small>
-               </div>
-          </div>
-          <div class="rounded w-36 h-24 bg-gray-100 flex items-center justify-center mt-3  cursor-pointer ">
-               <div class="flex flex-col items-center justify-center">
-                    <i class="text-lg fa-solid fa-cart-shopping"></i>
-                    <small>سبد خرید</small>
-               </div>
-          </div>
-     </div>
-
-
-     <div class="w-full h-6 bg-gray-100"></div>
-
-
-     <div id="shop" class="flex p-3 flex-col w-full h-full bg-gray-200 rounded items-end space-y-4 ">
-
-          <div id="0" class="flex items-center space-x-1 w-full">
-               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(0)">
-                    <i class="text-sm fa-solid fa-chevron-down"></i>
-               </div>
-               <div class="w-1/5 cursor-pointer flex justify-end items-center">
-                    <a href="search/workEquipment">
-                         <span class=" transition-all duration-400 hover:text-blue-400">کفش کار</span>
-
-                    </a>
-               </div>
-          </div>
-          <div class="space-y-4 rounded mx-auto mt-1  mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
-               [hidden]="showOrHide[0]">
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کفش کوه نوردی </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کفش ضد اسید </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> پوتین و چکمه </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> کوه نوردی </span>
-               </div>
-          </div>
-
-
-
-
-          <div id="1" class="flex items-center space-x-1 w-full">
-               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(1)">
-                    <i class="text-sm fa-solid fa-chevron-down"></i>
-               </div>
-               <div class="w-1/5 cursor-pointer flex justify-end items-center">
-                    <a href="search/gatgetry">
-                         <span class=" transition-all duration-400 hover:text-blue-400"> ابزار آلات</span>
-                    </a>
-               </div>
-          </div>
-          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
-               [hidden]="showOrHide[1]">
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ابزار کارگاه </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ابزار برقی </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ابزار نجاری </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> ضد سرقت </span>
-               </div>
-          </div>
-
-
-
-
-
-
-
-          <div id="2" class="flex items-center space-x-1 w-full">
-               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(2)">
-                    <i class="text-sm fa-solid fa-chevron-down"></i>
-               </div>
-               <div class="w-1/5 cursor-pointer flex justify-end items-center">
-                    <a href="search/jacket">
-                         <span class=" transition-all duration-400 hover:text-blue-400"> کاپشن </span>
-                    </a>
-               </div>
-          </div>
-          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
-               [hidden]="showOrHide[2]">
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کاپشن کاری </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> ضد اسید </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> مخصوص </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> کاپشن های آماده
-                    </span>
-               </div>
-          </div>
-
-
-
-
-
-          <div id="3" class="flex items-center space-x-1 w-full">
-               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(3)">
-                    <i class="text-sm fa-solid fa-chevron-down"></i>
-               </div>
-               <div class="w-1/5 cursor-pointer flex justify-end items-center">
-                    <a href="search/overCoat">
-                         <span class=" transition-all duration-400 hover:text-blue-400"> روپوش </span>
-
-                    </a>
-               </div>
-          </div>
-          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
-               [hidden]="showOrHide[3]">
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> روپوش کار </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> چریک </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> رنگی </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> روپوش نخی </span>
-               </div>
-          </div>
-
-
-
-
-
-
-          <div id="4" class="flex items-center space-x-1 w-full">
-               <div class="w-4/5 cursor-pointer " (click)="showAndHideSubMenu(4)">
-                    <i class="text-sm fa-solid fa-chevron-down"></i>
-               </div>
-               <div class="w-1/5 cursor-pointer flex justify-end items-center">
-                    <a href="search/protective">
-                         <span class="transition-all duration-400 hover:text-blue-400"> ایمنی</span>
-
-                    </a>
-               </div>
-          </div>
-          <div class="space-y-4 rounded mx-auto mt-1 mb-3 w-full bg-gray-300 flex flex-col items-end text-md p-4"
-               [hidden]="showOrHide[4]">
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> کلاه ایمنی </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> دستکش های ایمنی</span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all hover:text-blue-400"> لوازم ایمنی تخصصی
-                    </span>
-               </div>
-               <div>
-                    <span class="cursor-pointer duration-300 transition-all  hover:text-blue-400"> ماسک </span>
-               </div>
-          </div>
-
-     </div>
-</div> -->
-
-<!-- <app-slider></app-slider> -->

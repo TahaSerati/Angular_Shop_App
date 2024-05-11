@@ -1,0 +1,50 @@
+<!-- <app-header></app-header>
+
+<app-footer></app-footer> -->
+
+<article class="container">
+     <section>
+          <section class="w-full flex flex-col items-center my-2">
+               <label for="nameC">اسم دسته</label>
+               <input class="input-sm my-1"
+                    type="text"
+                    name="nameC" [(ngModel)]="category.nameC" required>
+
+          </section>
+          <hr>
+
+          <div class="w-full text-center">
+               <span>زیر مجموعه</span>
+          </div>
+
+          <ng-container *ngFor="let parentSub of category.parentSubs">
+               <section class="w-full flex flex-col items-center my-3">
+                    <input type="text" class="input-md"
+                         [(ngModel)]="parentSub.namePs" name="namePs">
+
+                         <div class="w-full flex-center flex-col my-3">
+                              <span>آدرس</span>
+
+                              <input type="text" class="input-sm" [(ngModel)]="parentSub.address">
+                              
+                         </div>
+                         
+
+                    <ng-container
+                         *ngFor="let childSub of parentSub.childSubs; let i = index">
+                         <input class="input-sm my-1"
+                              type="text"
+                              name="nameC"
+                              [(ngModel)]="parentSub.childSubs[i]">
+                    </ng-container>
+               </section>
+               <hr>
+          </ng-container>
+
+          <section class="w-full flex-center">
+               <button class="ctm-btn-green my-2"
+                    (click)="onSubmit()">ثبت</button>
+          </section>
+
+     </section>
+</article>

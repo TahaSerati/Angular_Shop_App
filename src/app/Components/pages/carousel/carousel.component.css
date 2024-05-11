@@ -1,121 +1,40 @@
-.container {
-     margin: 0 auto;
-     width: 80%;
-     text-align: center;
-     direction: rtl;
- }
-  
- #introduce {
-     display: block;
-     width: 100%;
-     font-size: 35px;
-     font-weight: bold;
-     color: white;
-     padding-bottom: 5px;
-     background-color: #4CAF50;
-     text-decoration: none;
-     margin-bottom: 15px;
- }
-  
- /* Page Style */
-  
- .rpd-slider {
-     direction: ltr;
- }
-  
- .main-wrapper {
-     margin: auto;
-     padding: 0 50px;
-     position: relative;
- }
-  
- .rpd-slider ul {
-     list-style: none;
-     display: flex;
+.carousel {
+     width: 1200px;
+     height: 400px;
      overflow: hidden;
-     padding: 0;
-     margin: 0 auto;
-     position: relative;
-     z-index: 10;
- }
-  
- .rpd-slider ul .slide-child-element {
-     flex-shrink: 0;
-     position: relative;
-     transition: 0.5s all;
-     transform: scale(0.75);
- }
-  
- .rpd-slider ul .slide-child-element.active-complete{
-     transform: scale(1);
- }
-  
- .rpd-slider ul .slide-child-element:not(.active-complete)::after{
-     position: absolute;
-     backdrop-filter: blur(8px);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-evenly;
+}
+
+.img-container {
+     display : flex; 
+     align-items: center;
+     width: 300%;
+     height: 90%;
+     transition: all 0.4s linear;
+}
+
+img {
      width: 100%;
      height: 100%;
-     left: 0;
-     top: 0;
-     content: "";
- }
-  
- .rpd-slider ul .slide-child-element img{
-     width: 100%;
- }
-  
- .rpd-slider .rpd-slider-navs {
-     position: absolute;
-     z-index: 5;
-     width: 100%;
-     height: 100%;
-     font-size: 2rem;
-     color: rgb(13, 225, 211);
-     top: 0;
-     left: 0;
- }
-  
- .rpd-slider .rpd-slider-navs .nav-element.disabled {
-     opacity: 0.5;
- }
-  
- .rpd-slider .rpd-slider-navs .nav-element {
-     position: absolute;
-     cursor: pointer;
-     top: calc((100% - 42px) / 2);
- }
-  
- .rpd-slider .rpd-slider-navs .nav-element.previous {
-     left: 10px;
-     right: auto;
- }
-  
- .rpd-slider .rpd-slider-navs .nav-element.next {
-     right: 10px;
-     left: auto;
- }
-  
-  
- .wrapper-element{
-     position: relative;
-     color: white;
-     text-shadow: 0 0 5px #009688;
- }
-  
- .wrapper-element .wrapper-element-content{
-     position: absolute;
-     bottom: 10px;
-     right: 15px;
-     text-align: right;
-     width: 100%;
- }
-  
- [data-index="2"] .wrapper-element .wrapper-element-content h3{
-     font-size: 3rem;
-     position: relative;
-     text-align: center;
-     margin: 0;
-     top: -130px;
-     background-color: rgba(0, 0, 0, 0.4);
-     backdrop-filter: blur(3px);
- }
+}
+
+.go-right {
+     
+}
+
+.go-left {
+
+}
+
+.dots {
+     display: flex;
+     align-items: center;
+     gap: 10px ;
+}
+
+.active-dot {
+     background-color: #000;
+}

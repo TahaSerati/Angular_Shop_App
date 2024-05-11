@@ -26,7 +26,7 @@ import { DashboardComponent } from './Components/user/dashboard/dashboard.compon
 import { OrdersComponent } from './Components/user/orders/orders.component';
 import { LikesComponent } from './Components/user/likes/likes.component';
 import { AddressComponent } from './Components/user/address/address.component';
-import { AdminPanelComponent } from './Components/user/admin-panel/admin-panel.component';
+import { AdminPanelComponent } from './Components/admin/admin-panel/admin-panel.component';
 import { DeleteProductComponent } from './Components/user/delete-product/delete-product.component';
 import { ChangeProductComponent } from './Components/user/change-product/change-product.component';
 import { AddNewProductComponent } from './Components/user/add-new-product/add-new-product.component';
@@ -42,6 +42,12 @@ import { MaterialModule } from './UI/material/material.module';
 import { CategoriesComponent } from './Components/pages/categories/categories.component';
 import { CarouselComponent } from './Components/pages/carousel/carousel.component';
 import { AlertBoxComponent } from './Components/pages/alert-box/alert-box.component';
+import { MegamenuComponent } from './Components/pages/megamenu/megamenu.component';
+import { SppinerComponent } from './UI/sppiner/sppiner.component';
+import { CategoryPanelComponent } from './Components/admin/category-panel/category-panel.component';
+import { AskAlertBoxComponent } from './Components/pages/ask-alert-box/ask-alert-box.component';
+import { EditCategoryComponent } from './Components/admin/edit-category/edit-category.component';
+import { AddCategoryComponent } from './Components/admin/add-category/add-category.component';
 
 
 @NgModule({
@@ -73,6 +79,12 @@ import { AlertBoxComponent } from './Components/pages/alert-box/alert-box.compon
     CategoriesComponent,
     CarouselComponent,
     AlertBoxComponent,
+    MegamenuComponent,
+    SppinerComponent,
+    CategoryPanelComponent,
+    AskAlertBoxComponent,
+    EditCategoryComponent,
+    AddCategoryComponent,
 
 
   ],

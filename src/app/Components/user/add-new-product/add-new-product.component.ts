@@ -78,8 +78,6 @@ export class AddNewProductComponent implements OnInit {
     });
 
     console.log(this.addProductForm.get('productFeatures')['controls']);
-    // this.thisValue = this.addProductForm.get('productFeatures')['controls']['سایز'].value
-    // console.log(this.thisValue)
 
     const savedFormData = localStorage.getItem('myForm');
     if (savedFormData) {

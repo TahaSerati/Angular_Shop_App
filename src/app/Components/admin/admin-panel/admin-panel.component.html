@@ -1,0 +1,76 @@
+<div class="container">
+
+     <app-header></app-header>
+
+     <div class="w-full flex flex-col space-y-4 rounded  mt-4 py-2 px-2">
+
+          <div (click)="goToCategoryPanel()"
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+                    <div class="text-lg">
+                         <span> مدیریت دسته </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-regular fa-credit-card text-sm"></i>
+                    </div>
+               </div>
+          </div>
+
+          <div
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+
+                    <div class="text-lg">
+                         <span> مدیریت کالا </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-solid fa-location-dot text-sm"></i>
+                    </div>
+               </div>
+          </div>
+
+          <div
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+
+                    <div class="text-lg">
+                         <span> جدید </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-regular fa-heart text-sm"></i>
+                    </div>
+               </div>
+          </div>
+
+          <div
+               class="flex items-center justify-between px-2 py-3 cursor-pointer transition-all duration-300 hover:text-blue-600"
+               style="border-bottom: 1px solid rgba(230, 230, 230, 0.829);">
+               <div>
+                    <i class="fa-solid fa-chevron-left text-sm"></i>
+               </div>
+               <div class="flex items-center space-x-2">
+
+                    <div class="text-lg" (click)="logOut()">
+                         <span> خروج از حساب </span>
+                    </div>
+                    <div class="mt-1">
+                         <i class="fa-solid fa-power-off text-sm"></i>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <app-footer></app-footer>
+</div>

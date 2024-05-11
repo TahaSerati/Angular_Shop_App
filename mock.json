@@ -35,128 +35,20 @@
       "isLogined": false
     },
     {
-      "userName": "taham",
-      "password": "123",
-      "email": "123@123.com",
+      "userPhone": "11212121212",
+      "password": "121231234123",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
       "id": 4
     },
     {
-      "userName": "ali",
-      "password": "mmm",
-      "email": "mmm@mmm.com",
+      "userPhone": "99999999999",
+      "password": "9999",
+      "productsInCart": [],
+      "isLogined": true,
+      "role": "admin",
       "id": 5
-    },
-    {
-      "userPhone": "asd",
-      "password": "aasdasd",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 6
-    },
-    {
-      "userPhone": "سلام",
-      "password": "1234",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 7
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345678",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 8
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345678",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 9
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345678",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 10
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345677",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 11
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "777777",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 12
-    },
-    {
-      "userPhone": "11111111111",
-      "password": "1111",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 13
-    },
-    {
-      "userPhone": null,
-      "password": null,
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 14
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "asd",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 15
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345678",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 16
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345678",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 17
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345678",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 18
-    },
-    {
-      "userPhone": "09908801459",
-      "password": "12345678",
-      "productsInCart": [],
-      "isLogined": true,
-      "role": "admin",
-      "id": 19
     }
   ],
   "products": [
@@ -330,6 +222,159 @@
       "ImgAddress": "assets/images/shoePic/shoe3.jpg",
       "sliderMainCategory": "workEquipment",
       "sliderSubCategory": "shoe"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "nameC": "موبایل",
+      "parentSubs": [
+        {
+          "namePs": "تبلت",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "سامسونگ",
+            "آی پد",
+            "شیاموی",
+            "لنوو"
+          ]
+        },
+        {
+          "namePs": "برند ها ",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "سامسونگ",
+            "آی پد",
+            "شیاومی",
+            "لنوو",
+            "نوکیا",
+            "نوکیا"
+          ]
+        },
+        {
+          "namePs": "جدید ترین",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "اولترا 23",
+            "گلکسی آ 53",
+            "گلکسی آ 53",
+            "گلکسی آ 53",
+            "گلکسی آ 53"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nameC": "برقی",
+      "parentSubs": [
+        {
+          "namePs": "لپ تاپ",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "ایسوز",
+            "لنوو",
+            "مک بوک",
+            "نوکیا"
+          ]
+        },
+        {
+          "namePs": "هدفون",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "BITS",
+            "اپل",
+            "بدون سیم",
+            "سونی",
+            "نوکیا"
+          ]
+        },
+        {
+          "namePs": "پرینتر",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "گرمایشی",
+            "سه بعدی",
+            "رنگی",
+            "برچسب زن",
+            "اچ پی"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nameC": "لوازم کار",
+      "parentSubs": [
+        {
+          "namePs": "لباس کار",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "لباس کار جدید",
+            "چرمی",
+            "جدید",
+            "رنگی"
+          ]
+        },
+        {
+          "namePs": "کفش",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "ضد اسید",
+            "چکمه",
+            "سربازی",
+            "جدید",
+            "رنگی"
+          ]
+        },
+        {
+          "namePs": "کلاه",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "رنگی",
+            "ضد اسید",
+            "بارونی",
+            "جدید"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nameC": "لوازم ایمنی",
+      "parentSubs": [
+        {
+          "namePs": "لباس ایمنی",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "لباس کار جدید",
+            "چرمی",
+            "جدید",
+            "رنگی"
+          ]
+        },
+        {
+          "namePs": "ماسک ایمنی",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "ضد اسید",
+            "چکمه",
+            "سربازی",
+            "جدید",
+            "رنگی"
+          ]
+        },
+        {
+          "namePs": "کلاه ایمنی",
+          "address": "products/workEquipment/shoe",
+          "childSubs": [
+            "رنگی",
+            "ضد اسید",
+            "بارونی",
+            "جدید"
+          ]
+        }
+      ]
     }
   ]
 }

@@ -10,4 +10,5 @@ export class AlertBoxComponent {
   @Input() message : string;
 
   constructor() {}
+
 }
