@@ -7,4 +7,13 @@
 - these is product detail section.
 - it use tailwindCss for styling.
 - it provide routing (SPA app).
-- 
+- images : 
+
+![a1](src/assets/images/a1.png)
+![a2](src/assets/images/a2.png)
+![a3](src/assets/images/a3.png)
+![a4](src/assets/images/a4.png)
+![a5](src/assets/images/a5.png)
+![a6](src/assets/images/a6.png)
+![a7](src/assets/images/a7.png)
+![a8](src/assets/images/a8.png)
